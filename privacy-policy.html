@@ -3,341 +3,231 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <!-- SEO Meta Tags -->
     <meta name="description" content="Sistema de agendamento de serviços pet para tutores maiores de 18 anos. Unimos tutores de pets e petshops com segurança e privacidade.">
     <meta name="author" content="Banho Pet">
-
-    <!-- OG Meta Tags -->
+    <meta name="keywords" content="BanhoPet, política de privacidade, agendamento serviços pet, privacidade dados pet">
+    <meta name="robots" content="index, follow">
     <meta property="og:site_name" content="Banho Pet" />
     <meta property="og:site" content="https://www.banhopet.com.br" />
     <meta property="og:title" content="Política de Privacidade - Banho Pet"/>
     <meta property="og:description" content="Conheça nossa política de privacidade para agendamento de serviços pet." />
-    <meta property="og:image" content="" />
+    <meta property="og:image" content="images/og-image.jpg" />
     <meta property="og:url" content="https://www.banhopet.com.br/politica-de-privacidade" />
     <meta property="og:type" content="article" />
-
-    <!-- Website Title -->
     <title>Política de Privacidade - Banho Pet</title>
-    
-    <!-- Styles -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:600,700" rel="stylesheet">
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/fontawesome-all.css" rel="stylesheet">
-    <link href="css/swiper.css" rel="stylesheet">
-    <link href="css/magnific-popup.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
-	
-    <!-- Favicon  -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'banhopet-blue': '#011EFF',
+                        'banhopet-orange': '#FF6600',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
     <link rel="icon" href="images/favicon.jpg">
 </head>
-<body data-spy="scroll" data-target=".fixed-top">
-    
-    <!-- Preloader -->
-	<div class="spinner-wrapper">
-        <div class="spinner">
-            <div class="bounce1"></div>
-            <div class="bounce2"></div>
-            <div class="bounce3"></div>
-        </div>
-    </div>
-    <!-- end of preloader -->
-    
-
+<body class="font-inter text-gray-800 bg-white">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
-        <!-- Image Logo -->
-        <a class="navbar-brand logo-image" href="index.html"><img src="images/logo.png" alt="Banho Pet" style="height:148px; width:auto; object-fit:contain;"></a> 
-        
-        <!-- Mobile Menu Toggle Button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-awesome fas fa-bars"></span>
-            <span class="navbar-toggler-awesome fas fa-times"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="index.html#header">INÍCIO <span class="sr-only">(atual)</span></a>
-                </li>
-               <!--  <li class="nav-item">
-                    <a class="nav-link page-scroll" href="index.html#features">FUNCIONALIDADES</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="index.html#preview">PREVISUALIZAÇÃO</a>
-                </li> -->
-                <!-- Dropdown Menu           
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle page-scroll" href="index.html#details" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">INSTITUCIONAL</a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="terms-conditions.html"><span class="item-text">TERMOS DE USO</span></a>
-                        <div class="dropdown-items-divide-hr"></div>
-                        <a class="dropdown-item" href="privacy-policy.html"><span class="item-text">POLÍTICA DE PRIVACIDADE</span></a>
-                    </div>
-                </li>
-                end of dropdown menu -->
-
-               <!--  <li class="nav-item">
-                    <a class="nav-link page-scroll" href="index.html#contact">CONTATO</a>
-                </li> -->
-            </ul>
-            <span class="nav-item social-icons">
-                <span class="fa-stack">
-                    <a href="https://www.instagram.com/banhopetoficial/" target="_blank" rel="noopener noreferrer">
-                        <i class="fas fa-circle fa-stack-2x"></i>
-                        <i class="fab fa-instagram fa-stack-1x"></i>
-                    </a>
-                </span>
-            </span>
+    <nav class="fixed top-0 w-full bg-banhopet-blue bg-opacity-90 backdrop-blur-md text-white z-50 shadow-lg" aria-label="Navegação Principal">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center" aria-label="Página Inicial">
+                <img src="images/logo.png" alt="Logo BanhoPet" class="h-16 w-auto object-contain">
+            </a>
+            <div class="md:hidden">
+                <button id="navbar-toggle" class="text-white focus:outline-none focus:ring-2 focus:ring-banhopet-orange rounded" aria-label="Abrir Menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+            <div id="navbar-menu" class="hidden md:flex md:items-center space-x-6">
+                <a href="index.html#header" class="relative text-lg font-medium hover:text-banhopet-orange transition-colors duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-banhopet-orange after:left-0 after:bottom-[-4px] after:transition-all after:duration-300 hover:after:w-full">Home</a>
+                <a href="index.html#signup" class="relative text-lg font-medium hover:text-banhopet-orange transition-colors duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-banhopet-orange after:left-0 after:bottom-[-4px] after:transition-all after:duration-300 hover:after:w-full">Petshops</a>
+                <a href="index.html#contact" class="relative text-lg font-medium hover:text-banhopet-orange transition-colors duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-banhopet-orange after:left-0 after:bottom-[-4px] after:transition-all after:duration-300 hover:after:w-full">Contato</a>
+                <div class="flex space-x-4">
+                    <a href="https://www.instagram.com/banhopetoficial" target="_blank" class="text-white hover:text-banhopet-orange transition-transform duration-300 hover:scale-110" aria-label="Instagram BanhoPet"><i class="fab fa-instagram text-xl"></i></a>
+                    <a href="https://www.facebook.com/banhopetapp" target="_blank" class="text-white hover:text-banhopet-orange transition-transform duration-300 hover:scale-110" aria-label="Facebook BanhoPet"><i class="fab fa-facebook-f text-xl"></i></a>
+                </div>
+            </div>
         </div>
     </nav>
-    <!-- end of navbar -->
-
+    <script>
+        document.getElementById('navbar-toggle').addEventListener('click', function() {
+            document.getElementById('navbar-menu').classList.toggle('hidden');
+        });
+    </script>
 
     <!-- Header -->
-    <header id="header" class="ex-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1>Política de Privacidade</h1>
+    <header id="header" class="relative bg-white pt-32 pb-16">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col items-center">
+                <div class="text-center mb-12">
+                    <h1 class="text-5xl md:text-6xl font-bold font-montserrat text-banhopet-blue mb-4 animate-slide-up">
+                        Política de Privacidade
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-600 animate-slide-up">
+                        Conheça como protegemos seus dados no Banho Pet<sup class="text-sm align-super">®</sup>.
+                    </p>
                 </div>
             </div>
         </div>
     </header>
-    <!-- end of header -->
-
 
     <!-- Breadcrumbs -->
-    <div class="ex-basic-1">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumbs">
-                        <a href="index.html">Início</a><i class="fa fa-angle-double-right"></i><span>Política de Privacidade</span>
-                    </div>
-                </div>
+    <div class="bg-gray-100 py-4">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center text-gray-600 text-sm">
+                <a href="index.html" class="hover:text-banhopet-blue transition-colors duration-300">Início</a>
+                <i class="fas fa-chevron-right mx-2"></i>
+                <span>Política de Privacidade</span>
             </div>
         </div>
     </div>
-    <!-- end of breadcrumbs -->
-
 
     <!-- Privacy Content -->
-    <div class="ex-basic-2">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 offset-lg-1">
-                    <div class="text-container">
-                        <h3>Sobre a coleta e uso de dados</h3>
-                        <p>O Banho Pet coleta informações dos tutores e petshops para viabilizar o agendamento de serviços pet, comunicação entre as partes e aprimoramento da experiência dos usuários. Os dados coletados incluem:</p>
-                        <ul class="list-unstyled li-space-lg indent">
-                            <li class="media">
-                                <i class="fas fa-square"></i>
-                                <div class="media-body">Nome, e-mail, telefone e endereço dos tutores</div>
-                            </li>
-                            <li class="media">
-                                <i class="fas fa-square"></i>
-                                <div class="media-body">Dados dos pets: nome, espécie, raça, idade</div>
-                            </li>
-                            <li class="media">
-                                <i class="fas fa-square"></i>
-                                <div class="media-body">Informações de agendamento: data, horário, serviço e petshop escolhido</div>
-                            </li>
-                            <li class="media">
-                                <i class="fas fa-square"></i>
-                                <div class="media-body">Dados de navegação e cookies para melhorar a experiência no site</div>
-                            </li>
-                            <li class="media">
-                                <i class="fas fa-square"></i>
-                                <div class="media-body">Comunicação via WhatsApp ou outros canais integrados</div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="text-container">
-                        <h3>Como utilizamos seus dados</h3>
-                        <ol class="li-space-lg">
-                            <li>Para realizar e gerenciar agendamentos de serviços pet</li>
-                            <li>Facilitar a comunicação entre tutores e petshops (inclusive via WhatsApp)</li>
-                            <li>Enviar notificações, lembretes e confirmações</li>
-                            <li>Melhorar nossos serviços e garantir a segurança dos dados</li>
-                            <li>Cumprir obrigações legais e regulatórias</li>
-                        </ol>
-                    </div>
-                    <div class="text-container">
-                        <h3>Compartilhamento de informações</h3>
-                        <p>Seus dados podem ser compartilhados com:</p>
-                        <ul class="list-unstyled li-space-lg indent">
-                            <li class="media">
-                                <i class="fas fa-square"></i>
-                                <div class="media-body">Petshops parceiros: apenas as informações necessárias para a prestação do serviço agendado</div>
-                            </li>
-                            <li class="media">
-                                <i class="fas fa-square"></i>
-                                <div class="media-body">Plataformas de comunicação como WhatsApp para envio de mensagens relacionadas ao serviço</div>
-                            </li>
-                            <li class="media">
-                                <i class="fas fa-square"></i>
-                                <div class="media-body">Autoridades legais em caso de requisição judicial ou obrigação legal</div>
-                            </li>
-                        </ul>
-                        <p>Não vendemos ou compartilhamos seus dados com terceiros para fins comerciais.</p>
-                    </div>
-                    <div class="text-container">
-                        <h3>Segurança dos dados</h3>
-                        <p>Adotamos medidas técnicas e administrativas para proteger suas informações contra acesso não autorizado, vazamento, alteração ou destruição. O acesso aos dados é restrito a profissionais autorizados e treinados.</p>
-                    </div>
-                    <div class="text-container">
-                        <h3>Cookies e tecnologias similares</h3>
-                        <p>Utilizamos cookies para melhorar a navegação e personalizar a experiência do usuário. Você pode gerenciar suas preferências de cookies nas configurações do seu navegador.</p>
-                    </div>
-                    <div class="text-container">
-                        <h3>Direitos dos titulares</h3>
-                        <p>Você pode solicitar a qualquer momento:</p>
-                        <ul>
-                            <li>Acesso aos seus dados pessoais</li>
-                            <li>Correção de informações incorretas ou desatualizadas</li>
-                            <li>Exclusão de seus dados, exceto quando houver obrigação legal de retenção</li>
-                            <li>Revogação do consentimento para uso dos dados</li>
-                        </ul>
-                        <p>Para exercer seus direitos, entre em contato pelo e-mail: <a href="mailto:suporte@banhopet.com.br">suporte@banhopet.com.br</a>.</p>
-                    </div>
-                    <div class="text-container">
-                        <h3>Consentimento</h3>
-                        <p>Ao usar o Banho Pet, você concorda com esta política de privacidade. Para mais informações, acesse nossos <a href="terms-conditions.html">Termos de Uso</a>.</p>
-                    </div>
-                    <div class="text-container">
-                        <h3>Alterações nesta política</h3>
-                        <p>Esta Política de Privacidade pode ser atualizada periodicamente. A versão mais recente estará sempre disponível em nosso site.</p>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <!-- <div class="text-container last">
-                                <h3>Solicite seus dados</h3>
-                                <p>Você pode solicitar acesso, correção ou exclusão dos seus dados a qualquer momento pelo e-mail <a href="mailto:privacidade@banhopet.com.br">privacidade@banhopet.com.br</a>.</p>
-                            </div> -->
-                        </div>
-                        <div class="col-md-6">
-						
-                            <!-- Privacy Form 
-                            <div class="form-container">
-                                <form id="privacyForm" data-toggle="validator" data-focus="false">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control-input" id="pname" required>
-                                        <label class="label-control" for="pname">Nome</label>
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="email" class="form-control-input" id="pemail" required>
-                                        <label class="label-control" for="pemail">E-mail</label>
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                    <div class="form-group">
-                                        <select class="form-control-select" id="pselect" required>
-                                            <option class="select-option" value="" disabled selected>Selecione uma opção</option>
-                                            <option class="select-option" value="Delete data">Excluir meus dados</option>
-                                            <option class="select-option" value="Show me data">Mostrar meus dados</option>
-                                        </select>
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                    <div class="form-group checkbox">
-                                        <input type="checkbox" id="pterms" value="Agreed-to-Terms" required>Li e concordo com a <a href="privacy-policy.html">Política de Privacidade</a> e os <a href="terms-conditions.html">Termos de Uso</a>
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                    <div class="form-group">
-                                        <button type="submit" class="form-control-submit-button">ENVIAR</button>
-                                    </div>
-                                    <div class="form-message">
-                                        <div id="pmsgSubmit" class="h3 text-center hidden"></div>
-                                    </div>
-                                </form>
-                            </div>
-                             end of privacy form -->
-                        </div>
-                    </div>
-                    <a class="btn-outline-reg back" href="index.html">VOLTAR</a>
+    <div class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto" data-aos="fade-up">
+                <div class="bg-white p-8 rounded-xl shadow-lg mb-8">
+                    <h3 class="text-2xl font-semibold text-banhopet-blue mb-4">Sobre a coleta e uso de dados</h3>
+                    <p class="text-gray-700 mb-4">O Banho Pet coleta informações dos tutores e petshops para viabilizar o agendamento de serviços pet, comunicação entre as partes e aprimoramento da experiência dos usuários. Os dados coletados incluem:</p>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-square text-banhopet-blue text-sm mt-1"></i>
+                            <span>Nome, e-mail, telefone e endereço dos tutores</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-square text-banhopet-blue text-sm mt-1"></i>
+                            <span>Dados dos pets: nome, espécie, raça, idade</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-square text-banhopet-blue text-sm mt-1"></i>
+                            <span>Informações de agendamento: data, horário, serviço e petshop escolhido</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-square text-banhopet-blue text-sm mt-1"></i>
+                            <span>Dados de navegação e cookies para melhorar a experiência no site</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-square text-banhopet-blue text-sm mt-1"></i>
+                            <span>Comunicação via WhatsApp ou outros canais integrados</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-lg mb-8">
+                    <h3 class="text-2xl font-semibold text-banhopet-blue mb-4">Como utilizamos seus dados</h3>
+                    <ol class="list-decimal pl-6 space-y-3 text-gray-700">
+                        <li>Para realizar e gerenciar agendamentos de serviços pet</li>
+                        <li>Facilitar a comunicação entre tutores e petshops (inclusive via WhatsApp)</li>
+                        <li>Enviar notificações, lembretes e confirmações</li>
+                        <li>Melhorar nossos serviços e garantir a segurança dos dados</li>
+                        <li>Cumprir obrigações legais e regulatórias</li>
+                    </ol>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-lg mb-8">
+                    <h3 class="text-2xl font-semibold text-banhopet-blue mb-4">Compartilhamento de informações</h3>
+                    <p class="text-gray-700 mb-4">Seus dados podem ser compartilhados com:</p>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-square text-banhopet-blue text-sm mt-1"></i>
+                            <span>Petshops parceiros: apenas as informações necessárias para a prestação do serviço agendado</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-square text-banhopet-blue text-sm mt-1"></i>
+                            <span>Plataformas de comunicação como WhatsApp para envio de mensagens relacionadas ao serviço</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-square text-banhopet-blue text-sm mt-1"></i>
+                            <span>Autoridades legais em caso de requisição judicial ou obrigação legal</span>
+                        </li>
+                    </ul>
+                    <p class="text-gray-700 mt-4">Não vendemos ou compartilhamos seus dados com terceiros para fins comerciais.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-lg mb-8">
+                    <h3 class="text-2xl font-semibold text-banhopet-blue mb-4">Segurança dos dados</h3>
+                    <p class="text-gray-700">Adotamos medidas técnicas e administrativas para proteger suas informações contra acesso não autorizado, vazamento, alteração ou destruição. O acesso aos dados é restrito a profissionais autorizados e treinados.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-lg mb-8">
+                    <h3 class="text-2xl font-semibold text-banhopet-blue mb-4">Cookies e tecnologias similares</h3>
+                    <p class="text-gray-700">Utilizamos cookies para melhorar a navegação e personalizar a experiência do usuário. Você pode gerenciar suas preferências de cookies nas configurações do seu navegador.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-lg mb-8">
+                    <h3 class="text-2xl font-semibold text-banhopet-blue mb-4">Direitos dos titulares</h3>
+                    <p class="text-gray-700 mb-4">Você pode solicitar a qualquer momento:</p>
+                    <ul class="list-disc pl-6 space-y-3 text-gray-700">
+                        <li>Acesso aos seus dados pessoais</li>
+                        <li>Correção de informações incorretas ou desatualizadas</li>
+                        <li>Exclusão de seus dados, exceto quando houver obrigação legal de retenção</li>
+                        <li>Revogação do consentimento para uso dos dados</li>
+                    </ul>
+                    <p class="text-gray-700 mt-4">Para exercer seus direitos, entre em contato pelo e-mail: <a href="mailto:suporte@banhopet.com.br" class="text-banhopet-blue hover:underline">suporte@banhopet.com.br</a>.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-lg mb-8">
+                    <h3 class="text-2xl font-semibold text-banhopet-blue mb-4">Consentimento</h3>
+                    <p class="text-gray-700">Ao usar o Banho Pet, você concorda com esta política de privacidade. Para mais informações, acesse nossos <a href="terms-conditions.html" class="text-banhopet-blue hover:underline">Termos de Uso</a>.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-semibold text-banhopet-blue mb-4">Alterações nesta política</h3>
+                    <p class="text-gray-700">Esta Política de Privacidade pode ser atualizada periodicamente. A versão mais recente estará sempre disponível em nosso site.</p>
+                </div>
+
+                <div class="mt-8 text-center">
+                    <a href="index.html" class="inline-block bg-transparent hover:bg-banhopet-blue text-banhopet-blue font-semibold hover:text-white py-3 px-6 border border-banhopet-blue hover:border-transparent rounded-lg transition-colors duration-300">Voltar ao Início</a>
                 </div>
             </div>
         </div>
     </div>
-    <!-- end of privacy content -->
 
-
-    <!-- Breadcrumbs -->
-    <div class="ex-basic-1">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumbs">
-                        <a href="index.html">Início</a><i class="fa fa-angle-double-right"></i><span>Política de Privacidade</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end of breadcrumbs -->
-
-    
     <!-- Footer -->
-    <div class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="footer-col">
-                        <h4>Sobre o Banho Pet</h4>
-                        <p>Unindo tutores de pets e petshops para facilitar o agendamento de serviços pet com segurança e transparência.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="footer-col middle">
-                        <!-- <h4>Links Importantes</h4>
-                        <ul class="list-unstyled li-space-lg">
-                            <li class="media">
-                                <i class="fas fa-square"></i>
-                                <div class="media-body">Leia nossos <a class="turquoise" href="terms-conditions.html">Termos de Uso</a> e <a class="turquoise" href="privacy-policy.html">Política de Privacidade</a></div>
-                            </li>
-                        </ul> -->
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="footer-col last">
-                        <h4>Redes Sociais</h4>
-                        <span class="fa-stack">
-                             <a href="https://www.instagram.com/banhopetoficial/" target="_blank" rel="noopener noreferrer">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-instagram fa-stack-1x"></i>
-                            </a>                        
-                    </div> 
-                </div>
+    <footer id="footer" class="bg-banhopet-blue text-white py-6">
+        <div class="container mx-auto px-4 text-center">
+            <div class="mb-4">
+                <img src="images/logo.png" alt="Logo BanhoPet" class="h-10 w-auto mx-auto" loading="lazy">
+                <p class="text-base mb-3">WE 🧡 PETS!</p>
             </div>
-        </div>
-    </div>
-    <!-- end of footer -->  
-
-
-    <!-- Copyright -->
-    <div class="copyright">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <p class="p-small">Banho Pet® - Sistema de Agendamento de Serviços Pet</p>
-                </div>
+            <div class="flex justify-center space-x-4 mb-3">
+                <a href="https://www.instagram.com/banhopetoficial" target="_blank" class="text-white hover:text-banhopet-orange transition-transform duration-300 hover:scale-110" aria-label="Instagram BanhoPet"><i class="fab fa-instagram text-xl"></i></a>
+                <a href="https://www.facebook.com/banhopetapp" target="_blank" class="text-white hover:text-banhopet-orange transition-transform duration-300 hover:scale-110" aria-label="Facebook BanhoPet"><i class="fab fa-facebook-f text-xl"></i></a>
             </div>
+            <p class="text-xs mb-2">2025 Banho Pet® | Todos os direitos reservados | CNPJ: 18.807.247/0001-80 | JR GIROTTO TECNOLOGIA® | <a href="privacy-policy.html" class="text-white hover:text-banhopet-orange transition-colors duration-300 text-sm">Política de Privacidade</a></p>
         </div>
-    </div>
-    <!-- end of copyright -->
+    </footer>
 
-	
     <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+    </script>
     <script src="js/jquery.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/swiper.min.js"></script>
-    <script src="js/jquery.magnific-popup.js"></script>
-    <script src="js/morphext.min.js"></script>
-    <script src="js/validator.min.js"></script>
     <script src="js/scripts.js"></script>
-    
 </body>
 </html>
