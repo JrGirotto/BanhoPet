@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "aos": "latest",
-    "imask": "^6.4.3",
+    "imask": "^6.6.3",
     "jquery": "^3.6.0"
   },
   "devDependencies": {

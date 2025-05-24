@@ -1,15 +1,12 @@
-// js/scripts.js
-import './navbar.js';
-import './form.js';
-import './animations.js';
-
-$(document).ready(function() {
-    // Move Form Fields Label
-    $('input, textarea').on('keyup', function() {
-        if ($(this).val() !== '') {
-            $(this).addClass('notEmpty');
-        } else {
-            $(this).removeClass('notEmpty');
-        }
+document.addEventListener('DOMContentLoaded', () => {
+    const inputs = document.querySelectorAll('input, textarea');
+    inputs.forEach(input => {
+        input.addEventListener('input', () => {
+            if (input.value.trim() !== '') {
+                input.classList.add('notEmpty');
+            } else {
+                input.classList.remove('notEmpty');
+            }
+        });
     });
 });

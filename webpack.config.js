@@ -2,26 +2,34 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    main: './js/scripts.js' // Ponto de entrada do projeto
+    main: './js/scripts.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js' // Nome do arquivo de saída
+    filename: 'bundle.js',
+    publicPath: '/dist/'
   },
   mode: 'development',
   devServer: {
-    static: path.join(__dirname), // Serve arquivos estáticos da raiz do projeto
+    static: {
+      directory: path.join(__dirname),
+      publicPath: '/'
+    },
     compress: true,
-    port: 9000 // Porta para o servidor de desenvolvimento
+    port: 9000
   },
   module: {
     rules: [
       {
-        test: /\.js$/, // Processa arquivos .js
-        exclude: /node_modules/, // Exclui node_modules (opcional, mas comum)
+        test: /\.js$/,
+        exclude: /node_modules/,
         use: {
-          loader: 'babel-loader' // Usa babel para transpilação
+          loader: 'babel-loader'
         }
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
       }
     ]
   }
