@@ -23,26 +23,22 @@
                         'banhopet-blue': '#011EFF',
                         'banhopet-orange': '#FF6600',
                     },
-                    animation: {
-                        'fade-in': 'fadeIn 1s ease-out',
-                        'slide-up': 'slideUp 0.8s ease-out',
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' },
-                        },
-                        slideUp: {
-                            '0%': { transform: 'translateY(20px)', opacity: '0' },
-                            '100%': { transform: 'translateY(0)', opacity: '1' },
-                        },
-                    },
                 }
             }
         }
     </script>
 </head>
 <body class="font-inter text-gray-800 bg-white">
+    <!-- Script para zerar o formulário ao carregar a página -->
+    <script>
+      window.addEventListener('load', function () {
+        const signupForm = document.getElementById('signupForm');
+        if (signupForm) {
+          signupForm.reset();
+        }
+      });
+    </script>
+
     <!-- Navbar -->
     <nav class="fixed top-0 w-full bg-banhopet-blue bg-opacity-90 backdrop-blur-md text-white z-50 shadow-lg" aria-label="Navegação Principal">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -56,44 +52,47 @@
                     </svg>
                 </button>
             </div>
-            <div id="navbar-menu" class="hidden md:flex md:items-center space-x-6">
-                <a href="#header" class="relative text-lg font-medium hover:text-banhopet-orange transition-colors duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-banhopet-orange after:left-0 after:bottom-[-4px] after:transition-all after:duration-300 hover:after:w-full">Home</a>
-                <a href="#signup" class="relative text-lg font-medium hover:text-banhopet-orange transition-colors duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-banhopet-orange after:left-0 after:bottom-[-4px] after:transition-all after:duration-300 hover:after:w-full">Petshops</a>
-                <a href="#contact" class="relative text-lg font-medium hover:text-banhopet-orange transition-colors duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-banhopet-orange after:left-0 after:bottom-[-4px] after:transition-all after:duration-300 hover:after:w-full">Contato</a>
-                <div class="flex space-x-4">
-                    <a href="https://www.instagram.com/banhopetoficial" target="_blank" class="text-white hover:text-banhopet-orange transition-transform duration-300 hover:scale-110" aria-label="Instagram BanhoPet"><i class="fab fa-instagram text-xl"></i></a>
-                    <a href="https://www.facebook.com/banhopetapp" target="_blank" class="text-white hover:text-banhopet-orange transition-transform duration-300 hover:scale-110" aria-label="Facebook BanhoPet"><i class="fab fa-facebook-f text-xl"></i></a>
+            <div id="navbar-menu" class="hidden md:flex md:items-center md:space-x-6 absolute top-20 left-0 w-full bg-banhopet-blue bg-opacity-90 backdrop-blur-md md:static md:w-auto md:bg-transparent">
+                <div class="flex flex-col md:flex-row md:items-center space-y-4 md:space-y-0 md:space-x-6 p-4 md:p-0">
+                    <a href="#header" class="relative text-lg font-medium hover:text-banhopet-orange transition-colors duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-banhopet-orange after:left-0 after:bottom-[-4px] after:transition-all after:duration-300 hover:after:w-full">Home</a>
+                    <a href="#benefits" class="relative text-lg font-medium hover:text-banhopet-orange transition-colors duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-banhopet-orange after:left-0 after:bottom-[-4px] after:transition-all after:duration-300 hover:after:w-full">Benefícios</a>
+                    <a href="#signup" class="relative text-lg font-medium hover:text-banhopet-orange transition-colors duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-banhopet-orange after:left-0 after:bottom-[-4px] after:transition-all after:duration-300 hover:after:w-full">Petshops</a>
+                    <a href="#contact" class="relative text-lg font-medium hover:text-banhopet-orange transition-colors duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-banhopet-orange after:left-0 after:bottom-[-4px] after:transition-all after:duration-300 hover:after:w-full">Contato</a>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/banhopetoficial" target="_blank" class="text-white hover:text-banhopet-orange transition-transform duration-300 hover:scale-110" aria-label="Instagram BanhoPet"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="https://www.facebook.com/banhopetapp" target="_blank" class="text-white hover:text-banhopet-orange transition-transform duration-300 hover:scale-110" aria-label="Facebook BanhoPet"><i class="fab fa-facebook-f text-xl"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Header -->
-    <header id="header" class="relative bg-white pt-24 pb-20" opacity-0" data-aos="fade-in">
+    <header id="header" class="relative bg-white pt-28 pb-20 min-h-[600px]">
         <div class="container mx-auto px-4">
-            <div class="flex flex-col items-center">
-                <div class="flex flex-col md:flex-row items-center">
-                    <div class="md:w-1/2 text-center md:text-left mb-12 md:mb-0">
-                        <h1 class="text-5xl md:text-6xl font-bold font-montserrat text-banhopet-blue mb-4 animate-slide-up">
-                            Banho Pet<sup class="text-black text-lg align-super">®</sup>
-                        </h1>
-                        <h2 class="text-3xl md:text-4xl font-bold font-montserrat mb-6 animate-slide-up">
-                            A Solução Completa para <span class="text-banhopet-blue">Tutores</span> e <span class="text-banhopet-orange">Petshops</span>!
-                        </h2>
-                        <p class="text-lg md:text-xl text-gray-600 mb-8 animate-slide-up">
-                            <span class='text-banhopet-blue font-bold'>Tutores:</span> Agende Banho e Tosa e mais serviços com facilidade.<br>
-                            <span class='text-banhopet-orange font-bold'>Petshops:</span> Alcance mais Tutores e gerencie agendamentos.
-                        </p>
-                        <div class="flex justify-center md:justify-start space-x-4 animate-slide-up">
-                            <div class="flex justify-center md:justify-start space-x-4 mt-4">
-                                <a href="#" class="bg-transparent hover:bg-blue-800 text-blue-800 font-semibold hover:text-white py-3 px-6 border border-blue-800 hover:border-transparent rounded-lg transition-colors duration-300">Baixe o App</a>
-                                <a href="#signup" class="bg-transparent hover:bg-orange-500 text-orange-500 font-semibold hover:text-white py-3 px-6 border border-orange-500 hover:border-transparent rounded-lg transition-colors duration-300">Cadastre seu Petshop</a>
-                            </div>
-                        </div>
+            <div class="flex flex-col md:flex-row items-start">
+                <div class="md:w-1/2 text-left mb-12 md:mb-0">
+                    <h1 class="text-5xl md:text-6xl font-bold font-montserrat text-banhopet-blue mb-4">
+                        Banho Pet<sup class="text-black text-lg align-super">®</sup>
+                    </h1>
+                    <h2 class="text-3xl md:text-4xl font-bold font-montserrat mb-6">
+                        A Solução Completa para <span class="text-banhopet-blue">Tutores</span> e <span class="text-banhopet-orange">Petshops</span>!
+                    </h2>
+                    <p class="text-lg md:text-xl text-gray-600 mb-4">
+                        <span class='text-banhopet-blue font-bold'>Tutores:</span> Agende Banho e Tosa e mais serviços com facilidade.
+                    </p>
+                    <div class="flex justify-start">
+                        <button onclick="alert('Em Breve...')" class="bg-transparent hover:bg-blue-800 text-blue-800 font-semibold hover:text-white py-3 px-6 border border-blue-800 hover:border-transparent rounded-lg transition-colors duration-300">Baixe o App</button>
                     </div>
-                    <div class="md:w-1/2 relative animate-fade-in">
-                        <img src="images/header-iphone.png" alt="Painel de Agendamentos BanhoPet" class="w-full h-auto drop-shadow-2xl transform scale-110" loading="lazy">
+                    <p class="text-lg md:text-xl text-gray-600 mb-4 mt-8">
+                        <span class='text-banhopet-orange font-bold'>Petshops:</span> Alcance mais Tutores e gerencie agendamentos.
+                    </p>
+                    <div class="flex justify-start">
+                        <a href="#signup" class="bg-transparent hover:bg-orange-500 text-orange-500 font-semibold hover:text-white py-3 px-6 border border-orange-500 hover:border-transparent rounded-lg transition-colors duration-300">Cadastre seu Petshop</a>
                     </div>
+                </div>
+                <div class="md:w-1/2 relative">
+                    <img src="images/header-iphone.png" alt="Painel de Agendamentos BanhoPet" class="w-full h-auto drop-shadow-2xl transform scale-110" loading="lazy">
                 </div>
             </div>
         </div>
@@ -103,20 +102,20 @@
     <div id="benefits" class="py-20 bg-gray-50">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold font-montserrat mb-4" data-aos="fade-up">Por que escolher o BanhoPet?</h2>
-                <p class="text-xl text-gray-600" data-aos="fade-up" data-aos-delay="100">Soluções práticas para Tutores e Petshops.</p>
+                <h2 class="text-4xl font-bold font-montserrat mb-4">Por que escolher o BanhoPet?</h2>
+                <p class="text-xl text-gray-600">Soluções práticas para Tutores e Petshops.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Para Tutores -->
-                <div data-aos="fade-up" data-aos-delay="200">
+                <div>
                     <h3 class="text-2xl font-semibold text-center mb-6 text-banhopet-orange">Para Tutores</h3>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+                        <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow duration-300 border border-banhopet-orange">
                             <i class="fas fa-calendar-check text-4xl text-banhopet-orange mb-4"></i>
                             <h4 class="text-xl font-semibold mb-2 text-gray-800">Agendamento Fácil</h4>
                             <p class="text-gray-600">Agende Banho e Tosa e outros serviços Pet com o app.</p>
                         </div>
-                        <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+                        <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow duration-300 border border-banhopet-orange">
                             <i class="fas fa-map-marker-alt text-4xl text-banhopet-orange mb-4"></i>
                             <h4 class="text-xl font-semibold mb-2 text-gray-800">Encontre Petshops </h4>
                             <p class="text-gray-600">Localize serviços próximos de forma rápida.</p>
@@ -124,15 +123,15 @@
                     </div>
                 </div>
                 <!-- Para Pet Shops -->
-                <div data-aos="fade-up" data-aos-delay="300">
+                <div>
                     <h3 class="text-2xl font-semibold text-center mb-6 text-banhopet-blue">Para Petshops</h3>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+                        <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow duration-300 border border-banhopet-blue">
                             <i class="fas fa-users text-4xl text-banhopet-blue mb-4"></i>
                             <h4 class="text-xl font-semibold mb-2 text-gray-800">Alcance Mais Clientes</h4>
                             <p class="text-gray-600">Seja encontrado por tutores em busca de serviços Pet.</p>
                         </div>
-                        <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+                        <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow duration-300 border border-banhopet-blue">
                             <i class="fas fa-chart-line text-4xl text-banhopet-blue mb-4"></i>
                             <h4 class="text-xl font-semibold mb-2 text-gray-800">Gerencie Agendamentos</h4>
                             <p class="text-gray-600">Controle seus agendamentos online com facilidade.</p>
@@ -144,50 +143,58 @@
     </div>
 
     <!-- Cadastro Rápido -->
+    <div id="signup-anchor" class="relative -top-[80px]"></div>
     <div id="signup" class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-banhopet-blue mb-4" data-aos="fade-up">Cadastre seu Petshop Agora!</h2>
-                <p class="text-lg md:text-xl text-gray-600" data-aos="fade-up" data-aos-delay="100">Preencha os dados abaixo e comece a alcançar mais clientes.</p>
+                <h2 class="text-3xl md:text-4xl font-bold font-montserrat text-banhopet-blue mb-4">Cadastre seu Petshop Agora!</h2>
+                <p class="text-lg md:text-xl text-gray-600">Preencha os dados abaixo e comece a alcançar mais clientes.</p>
             </div>
-            <div class="max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-                <form id="signupForm" action="http://localhost:3000/petshop/cadastro" method="POST">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
-                        <div class="relative">
-                            <input type="text" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-banhopet-orange peer" id="nomePetShop" name="nome" placeholder=" " required>
-                            <label for="nomePetShop" class="absolute left-3 top-3 text-gray-500 transition-all duration-300 peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-2 peer-focus:text-sm peer-focus:text-banhopet-orange peer-valid:-top-2 peer-valid:text-sm peer-valid:text-banhopet-orange bg-white px-1">Nome do Petshop</label>
+            <div class="max-w-3xl mx-auto">
+                <div id="signup-content">
+                    <form id="signupForm" action="http://localhost:3000/petshop/cadastro" method="POST" autocomplete="off">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
+                            <div class="relative">
+                                <input type="text" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-banhopet-orange peer" id="nomePetShop" name="nome" placeholder=" " required>
+                                <label for="nome" class="absolute left-3 top-3 text-gray-500 transition-all duration-300 peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-2 peer-focus:text-sm peer-focus:text-banhopet-orange peer-valid:-top-2 peer-valid:text-sm peer-valid:text-banhopet-orange bg-white px-1">Nome do Petshop</label>
+                            </div>
+                            <div class="relative">
+                                <input type="text" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-banhopet-orange peer" id="cnpj" name="cnpj" placeholder=" " required>
+                                <label for="cnpj" class="absolute left-3 top-3 text-gray-500 transition-all duration-300 peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-2 peer-focus:text-sm peer-focus:text-banhopet-orange peer-valid:-top-2 peer-valid:text-sm peer-valid:text-banhopet-orange bg-white px-1">CNPJ (somente números)</label>
+                            </div>
                         </div>
-                        <div class="relative">
-                            <input type="text" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-banhopet-orange peer" id="cnpj" name="cnpj" placeholder=" " required oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0,14)">
-                            <label for="cnpj" class="absolute left-3 top-3 text-gray-500 transition-all duration-300 peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-2 peer-focus:text-sm peer-focus:text-banhopet-orange peer-valid:-top-2 peer-valid:text-sm peer-valid:text-banhopet-orange bg-white px-1">CNPJ (somente números)</label>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
+                            <div class="relative">
+                                <input type="email" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-banhopet-orange peer" id="email" name="email" placeholder=" " required autocomplete="new-email" autocapitalize="off" spellcheck="false">
+                                <label for="email" class="absolute left-3 top-3 text-gray-500 transition-all duration-300 peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-2 peer-focus:text-sm peer-focus:text-banhopet-orange peer-valid:-top-2 peer-valid:text-sm peer-valid:text-banhopet-orange bg-white px-1">E-mail</label>
+                            </div>
+                            <div class="relative">
+                                <input type="text" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-banhopet-orange peer" id="telefone" name="telefone" placeholder=" " required>
+                                <label for="telefone" class="absolute left-3 top-3 text-gray-500 transition-all duration-300 peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-2 peer-focus:text-sm peer-focus:text-banhopet-orange peer-valid:-top-2 peer-valid:text-sm peer-valid:text-banhopet-orange bg-white px-1">WhatsApp/Telefone (somente números)</label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
-                        <div class="relative">
-                            <input type="email" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-banhopet-orange peer" id="email" name="email" placeholder=" " required>
-                            <label for="email" class="absolute left-3 top-3 text-gray-500 transition-all duration-300 peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-2 peer-focus:text-sm peer-focus:text-banhopet-orange peer-valid:-top-2 peer-valid:text-sm peer-valid:text-banhopet-orange bg-white px-1">E-mail</label>
+                        <div class="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-6 mb-4 md:mb-6">
+                            <div class="relative md:col-span-2">
+                                <input type="password" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-banhopet-orange peer" id="senha" name="senha" placeholder=" " required minlength="8" autocomplete="new-password" autocapitalize="off" spellcheck="false">
+                                <label for="senha" class="absolute left-3 top-3 text-gray-500 transition-all duration-300 peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-2 peer-focus:text-sm peer-focus:text-banhopet-orange peer-valid:-top-2 peer-valid:text-sm peer-valid:text-banhopet-orange bg-white px-1">Senha (mín. 8 caracteres)</label>
+                            </div>
+                            <div class="relative md:col-span-2">
+                                <input type="text" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-banhopet-orange peer" id="cep" name="cep" placeholder=" " required>
+                                <label for="cep" class="absolute left-3 top-3 text-gray-500 transition-all duration-300 peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-2 peer-focus:text-sm peer-focus:text-banhopet-orange peer-valid:-top-2 peer-valid:text-sm peer-valid:text-banhopet-orange bg-white px-1">CEP (Ex.: 17500999)</label>
+                            </div>
+                            <div class="relative md:col-span-1">
+                                <input type="text" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-banhopet-orange peer" id="numero" name="numero" placeholder=" " required>
+                                <label for="numero" class="absolute left-3 top-3 text-gray-500 transition-all duration-300 peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-2 peer-focus:text-sm peer-focus:text-banhopet-orange peer-valid:-top-2 peer-valid:text-sm peer-valid:text-banhopet-orange bg-white px-1">Número</label>
+                            </div>
                         </div>
-                        <div class="relative">
-                            <input type="text" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-banhopet-orange peer" id="telefone" name="telefone" placeholder=" " required oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0,11)">
-                            <label for="telefone" class="absolute left-3 top-3 text-gray-500 transition-all duration-300 peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-2 peer-focus:text-sm peer-focus:text-banhopet-orange peer-valid:-top-2 peer-valid:text-sm peer-valid:text-banhopet-orange bg-white px-1">WhatsApp/Telefone (somente números)</label>
-                        </div>
-                    </div>
-                    <div class="mb-4 md:mb-6 relative">
-                        <input type="password" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-banhopet-orange peer" id="senha" name="senha" placeholder=" " required minlength="8">
-                        <label for="senha" class="absolute left-3 top-3 text-gray-500 transition-all duration-300 peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-2 peer-focus:text-sm peer-focus:text-banhopet-orange peer-valid:-top-2 peer-valid:text-sm peer-valid:text-banhopet-orange bg-white px-1">Senha (mín. 8 caracteres)</label>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
-                        <div class="relative">
-                            <input type="text" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-banhopet-orange peer" id="cep" name="cep" placeholder=" " required oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0,8)">
-                            <label for="cep" class="absolute left-3 top-3 text-gray-500 transition-all duration-300 peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-2 peer-focus:text-sm peer-focus:text-banhopet-orange peer-valid:-top-2 peer-valid:text-sm peer-valid:text-banhopet-orange bg-white px-1">CEP (somente números - Ex.: 17500999)</label>
-                        </div>
-                        <div class="relative">
-                            <input type="text" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-banhopet-orange peer" id="numero" name="numero" placeholder=" " required>
-                            <label for="numero" class="absolute left-3 top-3 text-gray-500 transition-all duration-300 peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-2 peer-focus:text-sm peer-focus:text-banhopet-orange peer-valid:-top-2 peer-valid:text-sm peer-valid:text-banhopet-orange bg-white px-1">Número (número do imóvel do Petshop)</label>
-                        </div>
-                    </div>
-                    <button type="submit" class="w-full bg-banhopet-orange text-white p-4 rounded-lg font-semibold hover:bg-orange-600 transition-all duration-300 hover:scale-105 hover:shadow-lg">Iniciar Cadastro do Petshop</button>
-                </form>
+                        <button type="submit" class="w-full bg-banhopet-orange text-white p-4 rounded-lg font-semibold hover:bg-orange-600 transition-all duration-300 hover:scale-105 hover:shadow-lg">Iniciar Cadastro do Petshop</button>
+                    </form>
+                </div>
+                <!-- Elemento para mensagem de feedback e botão de redirecionamento -->
+                <div id="feedback-section" class="hidden max-w-3xl mx-auto">
+                    <div id="feedback-message" class="mb-4 p-4 rounded-lg text-center font-medium"></div>
+                    <button id="redirect-button" class="w-full bg-banhopet-blue text-white p-4 rounded-lg font-semibold hover:bg-blue-800 transition-all duration-300 hover:scale-105 hover:shadow-lg">Acessar o Dashboard</button>
+                </div>
             </div>
         </div>
     </div>
@@ -195,19 +202,19 @@
     <!-- Contato -->
     <div id="contact" class="py-20 bg-gray-100">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold font-montserrat text-center text-banhopet-blue mb-12" data-aos="fade-up">Contato</h2>
+            <h2 class="text-4xl font-bold font-montserrat text-center text-banhopet-blue mb-12">Contato</h2>
             <ul class="list-none text-center space-y-6">
-                <li class="flex justify-center items-center space-x-3" data-aos="fade-up" data-aos-delay="100">
+                <li class="flex justify-center items-center space-x-3">
                     <i class="fas fa-map-marker-alt text-2xl text-banhopet-orange transition-transform duration-300 hover:scale-110"></i>
                     <span class="text-lg">Rua Olavo Bilac, 51 - Marília/SP</span>
                 </li>
-                <li class="flex justify-center items-center space-x-3" data-aos="fade-up" data-aos-delay="200">
+                <li class="flex justify-center items-center space-x-3">
                     <i class="fas fa-phone text-2xl text-banhopet-blue transition-transform duration-300 hover:scale-110"></i>
-                    <a href="tel:+5514997040256" class="text-lg hover:underline">+55 (14) 99704-0256</a>
+                    <span class="text-lg">+55 (14) 99704-0256</span>
                 </li>
-                <li class="flex justify-center items-center space-x-3" data-aos="fade-up" data-aos-delay="300">
+                <li class="flex justify-center items-center space-x-3">
                     <i class="fas fa-envelope text-2xl text-banhopet-orange transition-transform duration-300 hover:scale-110"></i>
-                    <a href="mailto:banhopet.sistema@gmail.com" class="text-lg hover:underline">suporte@banhopet.com.br</a>
+                    <span class="text-lg">suporte@banhopet.com.br</span>
                 </li>
             </ul>
         </div>
@@ -229,7 +236,33 @@
     </footer>
 
     <!-- Scripts -->
+    <script>
+      // Suavizar o scroll para links de âncora e ajustar a posição considerando a navbar
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            const navbarHeight = document.querySelector('nav').offsetHeight;
+            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+            // Fechar o menu mobile após clicar em um link
+            const navbarMenu = document.getElementById('navbar-menu');
+            navbarMenu.classList.add('hidden');
+          }
+        });
+      });
+
+      // Alternar visibilidade do menu em telas menores
+      document.getElementById('navbar-toggle').addEventListener('click', function () {
+        const navbarMenu = document.getElementById('navbar-menu');
+        navbarMenu.classList.toggle('hidden');
+      });
+    </script>
     <script src="dist/bundle.js" defer></script>
-    <script type="module" src="js/form.js"></script>
 </body>
 </html>
